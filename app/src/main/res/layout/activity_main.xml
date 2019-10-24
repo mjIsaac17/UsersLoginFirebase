@@ -16,7 +16,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Usuario"
+                android:hint="Correo"
                 android:inputType="text"
                 android:textSize="15dp" />
         </com.google.android.material.textfield.TextInputLayout>

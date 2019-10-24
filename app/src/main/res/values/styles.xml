@@ -10,7 +10,10 @@
 
     <style name="btnIniciarSesion" parent="ThemeOverlay.AppCompat.Light">
         <item name="colorAccent">@color/colorPrimary</item>
+    </style>
 
+    <style name="btnRegistrarse" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@color/naranja</item>
     </style>
 
 </resources>
