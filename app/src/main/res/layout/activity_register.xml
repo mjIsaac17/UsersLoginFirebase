@@ -9,7 +9,7 @@
     tools:context=".RegisterActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvUser"
+        android:id="@+id/tvNewEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
@@ -21,7 +21,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvPassword"
+        android:id="@+id/tvNewPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp">
