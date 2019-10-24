@@ -9,42 +9,56 @@
     android:layout_margin="30dp">
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Correo"
-                android:inputType="text"
-                android:textSize="15dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tvPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:hint="Correo"
+            android:inputType="text"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:textSize="15dp"/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
 
-        <Button
-            android:id="@+id/btnIniciarSesion"
-            android:layout_marginTop="20dp"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Iniciar Sesión"
-            android:textSize="20dp"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:theme="@style/btnIniciarSesion">
-        </Button>
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textSize="15dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión"
+        android:textSize="20dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:theme="@style/btnIniciarSesion">
+    </Button>
+
+    <Button
+        android:id="@+id/btnIrRegistrarse"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:textSize="20dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:theme="@style/btnRegistrarse">
+    </Button>
+
+
+
 
 
 
