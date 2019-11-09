@@ -37,6 +37,15 @@
             android:inputType="textPassword"
             android:textSize="15dp"/>
     </com.google.android.material.textfield.TextInputLayout>
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone">
+    </ProgressBar>
 
     <Button
         android:id="@+id/btnIniciarSesion"
@@ -60,16 +69,7 @@
         android:theme="@style/btnRegistrarse">
     </Button>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ProgressBar
-            android:id="@+id/progressBarLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-        </ProgressBar>
-    </RelativeLayout>
+
 
 
 

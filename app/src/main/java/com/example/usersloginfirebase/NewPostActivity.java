@@ -35,6 +35,7 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.concurrent.Delayed;
 
 public class NewPostActivity extends AppCompatActivity {
 
@@ -113,12 +114,14 @@ public class NewPostActivity extends AppCompatActivity {
                 storageTask = imageReference.putFile(uriImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        progressBar.setVisibility(View.GONE);
-                        Snackbar.make(thisView, "Se guardado la publicación", Snackbar.LENGTH_SHORT).show();
-                        PostClass post = new PostClass(postTitle, postDescription,
-                                taskSnapshot.getMetadata().getReference().getDownloadUrl().toString());
+                        Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                        while (!uriTask.isSuccessful());
+                        Uri downloadUrl = uriTask.getResult();
+                        PostClass post = new PostClass(postTitle, postDescription, downloadUrl.toString());
                         String postId = databaseReference.push().getKey();
                         databaseReference.child(postId).setValue(post);
+                        progressBar.setVisibility(View.GONE);
+                        Snackbar.make(thisView, "Se guardado la publicación", Snackbar.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override

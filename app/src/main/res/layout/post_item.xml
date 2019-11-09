@@ -20,9 +20,10 @@
             android:textSize="20dp"></TextView>
 
         <ImageView
-            android:id="@+id/ivPost"
+            android:id="@+id/ivItemPost"
             android:layout_width="match_parent"
-            android:layout_height="250dp"></ImageView>
+            android:layout_height="250dp"
+            android:background="@android:drawable/ic_menu_report_image"></ImageView>
         <TextView
             android:id="@+id/txtItemDescription"
             android:layout_width="wrap_content"
