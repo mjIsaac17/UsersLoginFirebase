@@ -2,17 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewNewPost"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".NewPostActivity"
     android:layout_margin="30dp">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_marginTop="16dp"
@@ -21,7 +24,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_menu_report_image" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progressBarNewPost"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </ProgressBar>
+    </RelativeLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -38,15 +49,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtContent"
+            android:id="@+id/txtPostDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contenido"
+            android:hint="Descripción"
             android:inputType="textMultiLine"
-            android:textSize="15dp"/>
+            android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -54,16 +64,11 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
+        android:text="Guardar"
         android:textSize="20dp"
         style="@style/Widget.AppCompat.Button.Colored"
         android:theme="@style/btnIniciarSesion">
     </Button>
 
-    <ProgressBar
-        android:id="@+id/progressBarNewPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-    </ProgressBar>
+
 </LinearLayout>
