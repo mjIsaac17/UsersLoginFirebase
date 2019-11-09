@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import java.util.regex.Pattern;
 
@@ -82,7 +83,12 @@ public class RegisterActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Snackbar.make(view, "Usuario registrado", Snackbar.LENGTH_SHORT).show();
                 }else{
-                    Snackbar.make(view, "Error al registrarse", Snackbar.LENGTH_SHORT).show();
+                    if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                        Snackbar.make(view, "El email ya esta en uso", Snackbar.LENGTH_SHORT).show();
+                    }else{
+                        Snackbar.make(view, task.getException().getMessage(), Snackbar.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
