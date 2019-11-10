@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,6 +42,7 @@ public class NewPostActivity extends AppCompatActivity {
 
     private static final int CHOOSE_IMAGE = 101;
     Button btnSavePost;
+    FloatingActionButton fabBack;
     EditText txtTitle, txtDescription;
     ProgressBar progressBar;
     ImageView imageView;
@@ -60,6 +62,7 @@ public class NewPostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_post);
 
         btnSavePost = (Button)findViewById(R.id.btnSavePost);
+        fabBack = (FloatingActionButton)findViewById(R.id.fabReturn);
         txtTitle = (EditText)findViewById(R.id.txtPostTitle);
         txtDescription = (EditText)findViewById(R.id.txtPostDescription);
         progressBar = (ProgressBar)findViewById(R.id.progressBarNewPost);
@@ -88,6 +91,18 @@ public class NewPostActivity extends AppCompatActivity {
                 }
             }
         });
+
+        fabBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NewPostActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    @Override
+    public void onBackPressed() {
+
     }
 
     private String getImageExtension(Uri uri){
